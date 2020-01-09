@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".homepage.Homepage">
+
+
+    <Button
+        android:id="@+id/fullBreweryListBtn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/full_brewery_list"
+        app:layout_constraintBottom_toTopOf="@+id/nearbyBreweryListBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homepage_title" />
+
+    <Button
+        android:id="@+id/nearbyBreweryListBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/nearby_breweries"
+        app:layout_constraintBottom_toTopOf="@+id/breweryMapBtn"
+        app:layout_constraintEnd_toEndOf="@+id/fullBreweryListBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/fullBreweryListBtn"
+        app:layout_constraintTop_toBottomOf="@+id/fullBreweryListBtn" />
+
+    <Button
+        android:id="@+id/breweryMapBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/brewery_map"
+        app:layout_constraintBottom_toTopOf="@+id/visitBreweryBtn"
+        app:layout_constraintEnd_toEndOf="@+id/nearbyBreweryListBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/nearbyBreweryListBtn"
+        app:layout_constraintTop_toBottomOf="@+id/nearbyBreweryListBtn" />
+
+    <Button
+        android:id="@+id/visitBreweryBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/visit_history"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/breweryMapBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/breweryMapBtn"
+        app:layout_constraintTop_toBottomOf="@+id/breweryMapBtn" />
+
+    <TextView
+        android:id="@+id/homepage_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/welcome_to_mn_breweries"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

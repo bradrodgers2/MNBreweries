@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">MN Breweries</string>
-    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_main">MN Breweries</string>
+    <string name="full_brewery_list">Full Brewery List</string>
+    <string name="nearby_breweries">Nearby Breweries</string>
+    <string name="brewery_map">Brewery Map</string>
+    <string name="visit_history">Visit History</string>
+    <string name="welcome_to_mn_breweries">Welcome to MN Breweries</string>
+    <string name="view_on_map">View On Map</string>
+    <string name="add_to_favorites">Add To Favorites</string>
 </resources>

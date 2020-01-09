@@ -12,3 +12,6 @@
 /captures
 .externalNativeBuild
 .cxx
+google-services.json
+libs/
+src/main/java/com/bradrodgers/mnbreweries/homepage/

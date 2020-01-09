@@ -2,7 +2,12 @@ apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
 
+apply plugin: 'kotlin-kapt'
+
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
+
+apply plugin: "androidx.navigation.safeargs"
 
 android {
     compileSdkVersion 29
@@ -14,6 +19,11 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas".toString())
+            }
+        }
     }
     buildTypes {
         release {
@@ -25,11 +35,38 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.core:core-ktx:1.0.2'
-    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.firebase:firebase-database:19.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    //Lifecycle and viewmodel
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0'
+
+    //Firebase - firestore
+    implementation 'com.google.firebase:firebase-firestore:21.3.1'
+
+    //Test Support
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //Fragment Navigation
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.1.0'
+
+    //Timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    //Room
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    kapt "android.arch.persistence.room:compiler:1.1.1"
+
+    //Permissions
+    implementation 'pub.devrel:easypermissions:3.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
 }
