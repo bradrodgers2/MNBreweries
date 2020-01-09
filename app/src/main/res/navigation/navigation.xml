@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homepage">
+
+    <fragment
+        android:id="@+id/homepage"
+        android:name="com.bradrodgers.mnbreweries.homepage.Homepage"
+        android:label="homepage_fragment"
+        tools:layout="@layout/homepage_fragment" >
+        <action
+            android:id="@+id/action_homepage_to_breweryList"
+            app:destination="@+id/breweryList">
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/breweryList"
+        android:name="com.bradrodgers.mnbreweries.breweryTextList.BreweryList"
+        android:label="brewery_list_fragment"
+        tools:layout="@layout/brewery_list_fragment" />
+</navigation>
