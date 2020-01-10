@@ -14,10 +14,18 @@
             android:id="@+id/action_homepage_to_breweryList"
             app:destination="@+id/breweryList">
         </action>
+        <action
+            android:id="@+id/action_homepage_to_mapFragment"
+            app:destination="@id/mapFragment" />
     </fragment>
     <fragment
         android:id="@+id/breweryList"
         android:name="com.bradrodgers.mnbreweries.breweryTextList.BreweryList"
         android:label="brewery_list_fragment"
         tools:layout="@layout/brewery_list_fragment" />
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.bradrodgers.mnbreweries.map.MapFragment"
+        android:label="map_fragment"
+        tools:layout="@layout/map_fragment" />
 </navigation>

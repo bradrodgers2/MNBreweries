@@ -7,26 +7,23 @@ import android.text.format.DateUtils
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
-import androidx.room.RoomDatabase
 import com.bradrodgers.mnbreweries.database.BreweryInfoDB
-import com.bradrodgers.mnbreweries.domain.BreweryInfo
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.GeoPoint
-import timber.log.Timber
 import com.bradrodgers.mnbreweries.database.DatabaseEntities
 import com.bradrodgers.mnbreweries.database.getDatabase
+import com.bradrodgers.mnbreweries.domain.BreweryInfo
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.tasks.Tasks
-import com.google.firebase.database.core.Repo
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.GeoPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import timber.log.Timber
 import java.math.BigDecimal
 import java.math.RoundingMode
 import kotlin.concurrent.thread
-import kotlin.math.ln
 
 
 class Repository(private val localDatabase: BreweryInfoDB) {
@@ -37,6 +34,7 @@ class Repository(private val localDatabase: BreweryInfoDB) {
 
     init {
         Timber.i("repository created")
+
     }
 
     val currentLocation: LiveData<Location>
@@ -44,7 +42,15 @@ class Repository(private val localDatabase: BreweryInfoDB) {
             return _currentLocation
         }
 
-    private var _currentLocation: MutableLiveData<Location> = MutableLiveData()
+    private var _currentLocation: MutableLiveData<Location> = MutableLiveData<Location>().apply {
+
+        val location = Location("")
+        location.latitude = 44.9375
+        location.longitude = -93.2010
+
+        value = location
+
+    }
 
     suspend fun getLocation(context: Context){
 

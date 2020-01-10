@@ -11,7 +11,7 @@ interface BreweryInfoDao {
     @Query("select * from dbbreweryinfo")
     fun getBreweryInfo(): LiveData<List<DatabaseEntities.DbBreweryInfo>>
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertBreweryInfo(breweryInfo: List<DatabaseEntities.DbBreweryInfo>)
 
     @Query("update dbbreweryinfo set distance = :distance where name = :name")

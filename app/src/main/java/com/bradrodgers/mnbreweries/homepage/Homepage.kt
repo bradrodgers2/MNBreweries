@@ -65,6 +65,11 @@ class Homepage : Fragment(), EasyPermissions.PermissionCallbacks {
             findNavController().navigate(R.id.action_homepage_to_breweryList, bundle)
         }
 
+        val breweryMapBtn = activity!!.findViewById<Button>(R.id.breweryMapBtn)
+        breweryMapBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_homepage_to_mapFragment)
+        }
+
 
     }
 
@@ -117,6 +122,7 @@ class Homepage : Fragment(), EasyPermissions.PermissionCallbacks {
         }else{
             //TODO: Add dialog
             //Location services not turned on.  Open dialog and offer to bring user to settings page
+
         }
 
         return null
