@@ -24,7 +24,7 @@ abstract class BreweryInfoDB: RoomDatabase(){
     abstract val breweryInfoDao: BreweryInfoDao
 }
 
-private lateinit var INSTANCE: BreweryInfoDB
+/*private lateinit var INSTANCE: BreweryInfoDB
 
 fun getDatabase(context: Context): BreweryInfoDB{
     synchronized(BreweryInfoDB::class.java){
@@ -38,4 +38,4 @@ fun getDatabase(context: Context): BreweryInfoDB{
         }
     }
     return INSTANCE
-}
+}*/

@@ -1,16 +1,12 @@
 package com.bradrodgers.mnbreweries.adapters
 
-import android.opengl.Visibility
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bradrodgers.mnbreweries.R
-import com.bradrodgers.mnbreweries.database.BreweryInfoDB
-import com.bradrodgers.mnbreweries.database.getDatabase
 import com.bradrodgers.mnbreweries.domain.BreweryInfo
-import com.bradrodgers.mnbreweries.repository.Repository
 
 class BreweryListAdapter: RecyclerView.Adapter<BreweryListAdapter.ViewHolder>() {
 

@@ -9,7 +9,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import com.bradrodgers.mnbreweries.database.BreweryInfoDB
 import com.bradrodgers.mnbreweries.database.DatabaseEntities
-import com.bradrodgers.mnbreweries.database.getDatabase
 import com.bradrodgers.mnbreweries.domain.BreweryInfo
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
@@ -197,7 +196,7 @@ class Repository(private val localDatabase: BreweryInfoDB) {
     }
 }
 
-private lateinit var INSTANCE: Repository
+/*private lateinit var INSTANCE: Repository
 
 fun getRepository(context: Context): Repository{
     synchronized(Repository::class.java){
@@ -207,4 +206,4 @@ fun getRepository(context: Context): Repository{
         }
     }
     return INSTANCE
-}
+}*/

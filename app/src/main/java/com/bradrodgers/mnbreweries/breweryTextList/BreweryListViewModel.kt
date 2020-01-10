@@ -4,25 +4,21 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.bradrodgers.mnbreweries.database.BreweryInfoDB
-import com.bradrodgers.mnbreweries.database.DatabaseEntities
-import com.bradrodgers.mnbreweries.database.getDatabase
+import com.bradrodgers.mnbreweries.MNBreweries
 import com.bradrodgers.mnbreweries.domain.BreweryInfo
-import com.bradrodgers.mnbreweries.repository.Repository
-import com.bradrodgers.mnbreweries.repository.getRepository
-import kotlinx.coroutines.*
+import kotlinx.coroutines.launch
 
 class BreweryListViewModel(application: Application) : AndroidViewModel(application) {
 
 
 
-    private val viewModelJob = SupervisorJob()
+    private val viewModelJob = MNBreweries.viewModelJob!!
 
-    private val viewModelScope = CoroutineScope(viewModelJob + Dispatchers.Main)
+    private val viewModelScope = MNBreweries.viewModelScope!!
 
     //private val database: BreweryInfoDB = getDatabase(application)
 
-    private val repository = getRepository(application)
+    private val repository = MNBreweries.repository!!
 
     val breweryInfoList = repository.breweryInfo
 

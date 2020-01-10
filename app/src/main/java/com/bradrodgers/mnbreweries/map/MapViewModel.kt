@@ -4,18 +4,15 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.bradrodgers.mnbreweries.repository.getRepository
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
+import com.bradrodgers.mnbreweries.MNBreweries
 
 class MapViewModel (application: Application) : AndroidViewModel(application){
 
-    private val viewModelJob = SupervisorJob()
+    private val viewModelJob = MNBreweries.viewModelJob!!
 
-    private val viewModelScope = CoroutineScope(viewModelJob + Dispatchers.Main)
+    private val viewModelScope = MNBreweries.viewModelScope!!
 
-    private val repository = getRepository(application)
+    private val repository = MNBreweries.repository!!
     val currentLocation = repository.currentLocation
 
     val breweryInfo = repository.breweryInfo
